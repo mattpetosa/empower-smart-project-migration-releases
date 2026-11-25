@@ -2,6 +2,11 @@
 
 Newest first. Downloads are on the [Releases](https://github.com/mattpetosa/empower-smart-project-migration-releases/releases) page.
 
+## v3.10.0.1-0.8.2 (2026-11-24)
+
+### Fixed
+- **A license key pasted from its email is no longer refused as invalid.** The key arrives in the email over several lines, and the key box kept only the first line of the paste, so the app saw a cut-off key and said it was invalid. The box now joins the lines into one, so pasting the whole key from the email works.
+
 ## v3.10.0.1-0.8.1 (2026-10-30)
 
 ### Changed
