@@ -2,6 +2,22 @@
 
 Newest first. Downloads are on the [Releases](https://github.com/mattpetosa/empower-smart-project-migration-releases/releases) page.
 
+## v3.10.0.1-0.8.3 (2026-11-27)
+
+### Added
+- **Test Backup card.** Backs up one project, unlocked, into a temporary `_ESPM_test_…` folder inside the backup folder you choose, runs the full backup checks on it, and deletes the copy when they pass. If a check fails, the copy is kept and the app asks whether to delete it. Empower records the backup in the project's audit trail; nothing in the project changes. A test backup is not added to backup history.
+- **Collect diagnostics.** A button in the header and another on the run summary save one zip to a place you choose: recent run logs and traces (last 7 days), the newest report, your settings, a machine summary that includes recent Windows Application event-log errors, and Empower's own backup log for failed runs. Passwords are masked in every file, and raw data, dump files and the license file are never included. Nothing is sent anywhere; send the zip yourself if you want help.
+- **Backup readiness in Check System.** An optional step that tests a backup folder and one project the way a real backup would. It leaves nothing behind.
+- **A warning when Empower is slow to start a backup.** If Empower hasn't started writing a backup after 3 minutes, the app warns you, and the status reads "Waiting for Empower to start…".
+- **A notice when Empower shows a message you may not see.** When Empower opens a message box that may be hidden behind other windows, the app says "Empower is showing a message" and offers **Show it** or **Ignore**.
+
+### Changed
+- **Every run now also writes a timed trace** (`….trace.txt`) next to its log. While Empower works, the trace records progress every 30 seconds; if nothing moves for a minute it adds a snapshot of what the computer is doing, and takes another just before a run is stopped.
+- **Back Up, Move and Restore check more before they start.** Folder access, the Oracle export and import tools and the database connection are checked before Empower starts, and each project's raw data is checked before its backup. A blocking problem stops the run before anything is touched; a check that couldn't be completed is shown as a warning.
+
+### Fixed
+- **Icons no longer show as empty squares on older Windows.** The app now carries its own icon font, so its icons look the same on every version of Windows, including those before Windows 10 and Windows Server 2016.
+
 ## v3.10.0.1-0.8.2 (2026-11-24)
 
 ### Fixed
